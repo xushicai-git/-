@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .v-leave-to,
+        .v-enter{
+            opacity: 0;
+            transform: translateX(400px);
+        }
+        .v-leave-active,
+        .v-enter-active{
+            transition: all 2s ease;
+            position: absolute;
+        }
+    
+    </style>
+    <script src="./libs/vue-2.4.0.js"></script>
+</head>
+<body>
+    <div id="app">
+        <a href="" @click.prevent="flag='login'">登录</a>
+        <a href="" @click.prevent="flag='reg'">注册</a>
+        <transition>
+            <component :is="flag"></component>
+        </transition>
+    </div>
+</body>
+    <script>
+        Vue.component("login", {
+            template:'<h3>这是登录</h3>'
+        })
+        Vue.component("reg", {
+            template:'<h3>这是注册</h3>'
+        })
+        let vm = new Vue({
+            el:'#app',
+            data:{
+                flag:'login'
+            }
+        })
+    </script>
+</html>

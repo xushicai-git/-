@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="./libs/vue-2.4.0.js"></script>
+</head>
+<body>
+    <div id="app">
+        <p ref="p">zheshi p</p>
+    </div>
+</body>
+    <script>
+        let vm = new Vue({
+            el:'#app',
+            data:{},
+            methods: {
+                getEl(){
+                    console.log(this.$refs.p.innerHTML="dasdasdas")
+                }
+            },
+            mounted() {
+                this.getEl();
+            },
+        })
+    </script>
+</html>

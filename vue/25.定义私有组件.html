@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="./libs/vue-2.4.0.js"></script>
+</head>
+<body>
+    <div id="app">
+        <tem></tem>
+        <mycom></mycom>
+        <mycom></mycom>
+        <mycom></mycom>
+    </div>
+    <template id="tem">
+        <div>
+            <p> 这是一个p</p>
+            <p> 这是一个p</p>
+        </div>
+    </template>
+</body>
+    <script>
+        let vm = new Vue({
+            el:'#app',
+            data:{},
+            components:{
+                mycom:{
+                    template:'<h1>哈哈哈</h1>'
+                },
+                tem:{
+                    template:'#tem'
+                }
+            }
+        })
+    </script>
+</html>
