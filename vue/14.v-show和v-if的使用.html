@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="./libs/vue-2.4.0.js"></script>
+</head>
+<body>
+    <div id="app">
+        <button @click="toggle">toggle</button>
+        <div v-show="flg">
+            {{msg}}
+        </div>
+    </div>
+
+
+
+
+
+    <script>
+        var vm=new Vue({
+            el:"#app",
+            data:{
+                flg:true,
+                msg:"我的第一次vue"
+            },
+            methods:{
+                toggle(){
+                    this.flg= (!this.flg);
+                }
+            }
+
+        });
+    </script>
+</body>
+</html>

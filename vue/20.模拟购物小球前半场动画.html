@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    .qiu{
+        border-radius: 50%;
+        background-color: red;
+        width: 50px;
+        height: 50px;
+        position: absolute;
+        left: 0;
+        top: 0;
+    }
+    </style>
+    <script src="./libs/vue-2.4.0.js"></script>
+</head>
+<body>
+    <div id="app">
+        <button @click='flag=!flag'>toggle</button>
+        <transition  @before-enter="b" @enter="enter" @after-enter="afterEnter"> 
+            <div v-show="flag" class="qiu"></div>
+        </transition>
+    </div>
+    <script>
+        let vm = new Vue({
+            el:'#app',
+            data:{
+                flag:false,
+            },
+            methods: {
+                b(el){
+                    el.style.transform="translate(0px, 0px)";
+                    // el.style.transtion="all 3s ease"
+                },
+                enter(el,done){
+                    el.offsetWidth
+                    el.style.transform="translate(150px,450px)";
+                    el.style.transition="all 500ms ease"
+                    done()
+                },
+                afterEnter(el){
+                    this.flag = !this.flag
+                }
+            },
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="./libs/vue-2.4.0.js"></script>
+    <style>
+        .red{
+            color: red;
+        }
+        .blue{
+            background-color: blue;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <div :class="className2" :style="st">21321432</div>
+    </div>
+    <script>
+        let vm = new Vue({
+            data:{
+                className:['red','blue'],
+                className2:{red:true,blue:false},
+                st:{'color':'#CCC'}
+            },
+            el:'#app'
+        })
+    </script>
+</body>
+</html>

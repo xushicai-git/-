@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="./libs/vue-2.4.0.js"></script>
+</head>
+<body>
+    <div id="app">
+        <ul v-for="(item,index) in list">
+            <li v-for="(item,index) in list">{{index}} ----   name:{{item.name}};age:{{item.age}}</li>
+        </ul>
+    </div>
+
+
+
+
+
+    <script>
+        var vm=new Vue({
+            el:"#app",
+            data:{
+                list:[
+                    {name:"卢桂兰",age:18},
+                    {name:"黄鱼",age:19},
+                    {name:"张飞",age:38}
+                    ]
+            }
+
+        });
+    </script>
+</body>
+</html>

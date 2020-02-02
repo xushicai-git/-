@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="./libs/vue-2.4.0.js"></script>
+</head>
+<body>
+    <div id="app">
+        <input type="button" value="run" @click="run">
+        <input type="button" value="stop" @click="stop">
+        <div> {{msg}} </div>
+    </div>
+    <script>
+        let vm = new Vue({
+            el:'#app',
+            data:{
+                msg : '套马的汉子！！！',
+                timeid:null
+            },
+            methods:{
+                run(){
+                    if(this.timeid){return};
+                    this.timeid = setInterval(()=>{
+                        let firstStr=this.msg.substring(0,1);
+                        let lastStr=this.msg.substring(1,)
+                        this.msg=lastStr+firstStr;
+                    },500)
+                },
+                stop(){
+                    clearInterval(this.timeid)
+                    this.timeid=null;
+                }
+            }
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="./libs/vue-2.4.0.js"></script>
+</head>
+<body>
+    <div id="app">
+        {{msg}}
+    </div>
+
+
+
+
+
+    <script>
+        var vm=new Vue({
+            el:"#app",
+            data:{
+                msg:'xushicai'
+             },
+            beforecreate(){},
+            created(){
+                this.msg="许是才"
+                console.log(document.getElementById('app').innerHTML);
+                
+            },
+            beforeMount(){
+                console.log(document.getElementById('app').innerHTML);
+            },
+            mounted(){
+                console.log(document.getElementById('app').innerHTML);
+            },
+            beforeUpdate(){},
+            updated(){},
+            beforeDestroy(){},
+            destroyed(){}
+
+        });
+    </script>
+</body>
+</html>

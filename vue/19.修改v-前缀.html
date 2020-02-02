@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="./libs/vue-2.4.0.js"></script>
+    <style>
+    .v-enter,
+    .v-leave-to{
+        transform: translateX(100px);
+        opacity: 0;
+    }
+    .v-enter-active,
+    .v-leave-active{
+        /* transform: translateX(0); */
+        transition: all 2s ease;
+    }
+    .my-enter,
+    .my-leave-to{
+        transform: translateX(100px);
+        opacity: 0;
+    }
+    .my-enter-active,
+    .my-leave-active{
+        /* transform: translateX(0); */
+        transition: all 1s ease;
+    }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <button @click="flag=!flag">h1</button>
+        <transition>
+            <h1 v-show="flag"> {{msg}} </h1>
+        </transition>
+        <button @click="flag2=!flag2">h6</button>
+        <transition name="my">
+            <h6 v-if="flag2"> {{name}} </h6>
+        </transition>
+    </div>
+    <script>
+    let vm=new Vue({
+        el:'#app',
+        data:{
+            msg:'这是h1',
+            name:'这是h6',
+            flag:false,
+            flag2:false,
+        }
+    });
+    </script>
+</body>
+</html>
